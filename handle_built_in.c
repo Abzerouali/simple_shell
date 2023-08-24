@@ -10,7 +10,7 @@
 */
 int handle_built_in(char **arg, char *input_buff, int exit_num)
 {
-	char **envir;
+	char **env;
 	int exit_sta = EXIT_SUCCESS, i;
 
 	if (strcmp(arg[0], "exit") == 0)
@@ -28,10 +28,10 @@ int handle_built_in(char **arg, char *input_buff, int exit_num)
 		free(input_buff);
 		exit(exit_sta);
 	}
-	else if (strcmp(arg[0], "envir") == 0)
+	else if (strcmp(arg[0], "env") == 0)
 	{
-		for (envir = environ; *envir; ++envir)
-			printf("%s\n", *envir);
+		for (env = environ; *env; ++env)
+			printf("%s\n", *env);
 		free_arg(arg);
 		return (1);
 	}
