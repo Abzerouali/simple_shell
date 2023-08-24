@@ -8,7 +8,7 @@
 int execute_forked_cmd(char **arg, char *input_buff)
 {
 	pid_t prosid;
-	int sta, i;
+	int status, i;
 
 	prosid = fork();
 	if (prosid == -1)
@@ -30,9 +30,9 @@ int execute_forked_cmd(char **arg, char *input_buff)
 			exit(EXIT_FAILURE);
 		}
 	}
-	if (wait(&sta) == -1)
+	if (wait(&status) == -1)
 		perror("wait");
-	if (WIFEXITED(sta))
-		return (WEXITSTATUS(sta));
+	if (WIFEXITED(status))
+		return (WEXITSTATUS(status));
 	return (-1);
 }
