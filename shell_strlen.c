@@ -1,22 +1,17 @@
 #include "main.h"
-
 /**
- * shell_strcmp - Func to compare two strings lexicographically.
-*@str1: First string
-*@str2: Second string
-*Return: The difference between the differing characters ASCII values
+* shell_strlen - Calculate the length of a string.
+* @str: Pointer to the input string.
+* Return: Length of the string (number of characters).
 */
-int shell_strcmp(char *str1, char *str2)
+int shell_strlen(char *str)
 {
-	int i = 0;
+	int len = 0, i = 0;
 
-	while (str1[i] == str2[i])
+	while (*(str + i) != '\0')
 	{
-		if (str1[i] == '\0')
-		{
-			return (0);
-		}
+		len++;
 		i++;
 	}
-	return (str1[i] - str2[i]);
+	return (len);
 }
