@@ -7,7 +7,8 @@
 int check_cmd_exists(char **arg)
 {
 	char *path, *dirc;
-	char search[4096], char cmd_path[4096];
+	char search[4096];
+	char cmd_path[4096];
 
 	if (arg[0][0] == '/' || arg[0][0] == '.')
 	{
